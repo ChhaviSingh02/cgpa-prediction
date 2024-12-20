@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CG Predictor</title>
+  <style>
+    body { font-family: Arial, sans-serif; text-align: center; margin: 0; padding: 0; }
+    header { background: #4CAF50; color: white; padding: 20px; font-size: 24px; }
+    .container { margin: 20px; }
+    .college-logo { width: 100px; cursor: pointer; margin: 10px; }
+    .hidden { display: none; }
+  </style>
+</head>
+<body>
+  <header>CG Predictor</header>
+  <div class="container">
+    <h2>Select Your College</h2>
+    <img src="image/dtu.png" alt="DTU" class="college-logo" onclick="selectCollege(1)">
+    <img src="image/igdtuw.png" alt="IGDTUW" class="college-logo" onclick="selectCollege(2)">
+    <img src="image/nsut.png" alt="NSUT" class="college-logo" onclick="selectCollege(3)">
+  </div>
+  <div id="form-container" class="hidden">
+    <h2>Enter Details for College <span id="college-name"></span></h2>
+    <label for="subjects">Number of Subjects:</label>
+    <input type="number" id="subjects" min="1" placeholder="Enter number" required>
+    <button onclick="generateFields()">Generate Fields</button>
+    <div id="subject-marks" class="hidden"></div>
+    <button id="calculate-btn" class="hidden" onclick="calculateCG()">Calculate CGPA</button>
+    <h3 id="result" class="hidden"></h3>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
